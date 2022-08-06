@@ -1,0 +1,15 @@
+FROM ubuntu:latest
+
+RUN apt update \
+    && apt upgrade \
+    && apt install openssh-server \
+    && apt install nano, net-tools \
+    && sed -E 's/^#(PermitRootLogin )no/\1yes/' /etc/ssh/sshd_config -i \
+    && ssh-keygen -A \
+    && touch ~/.ssh/authorized_keys \
+    && echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDByNFPnld/Uc+S9o9ROM6MJXZw5ng5gh+Y5L03L5j2F1vxF5DPuBQJEQeHx7u/GhgWhFniQFNM8rZnr2AvxHuaZZcLIo1BqTWV/WlPpggbcobaW3Fu4Pi+CjuX2xiPzeL/lSgIsZFX9hTzitPRvJATtFGuRY9U6T/0/LONjWn3S3jy0JxMqkJdFf5S0WCc0STstqhGRFTiuHTiCnaWgiLe0FA/M+809zr60WSbn5NNNDlovQkJwaXDUkjDYyZNZqJmHCW9zNsj1nB5a8Nmdb+NqGEuodrOm6yFnc7T6dd1NBtpivtO3qcp1WvbxLrYt7Ks8rk9B5B45tqYbZUZ7b0/ maxime@debian" >> ~/.ssh/authorized_keys \
+    && service ssh start
+
+EXPOSE 22
+
+#docker run --name ubuntu -d -ti --entrypoint /bin/sh ubuntu

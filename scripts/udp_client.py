@@ -1,0 +1,17 @@
+#!/home/serveradmin/Desktop/security/DEV/pyhton/environments/bin/ python3
+
+### Set a netcat listener (  nc -ulp -80  ) to receive data
+
+import socket
+target_host = "127.0.0.1"
+target_port = 80
+
+client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
+client.sendto(b"this is test data", (target_host,target_port))
+
+data, addr = client.recvfrom(4096)
+
+print(data)
+
+
