@@ -20,7 +20,7 @@ def host_is_connect():
             return True  
         
 ### Fonction to connect localhost to target and make an ssh reverse tunel
-def connect_to_jump():
+def connect_to_rhost():
      subprocess.call("autossh -M 0 -o \"ServerAliveInterval 30\" -o \"ServerAliveCountMax 3\" -p {} -R {}:localhost:{} root@{}".format(target_ssh_port,local_port,remote_port,target), shell=True)
 
 ### Run when called 
@@ -28,6 +28,6 @@ if __name__ == '__main__':
     if host_is_connect() == True :
         pass
     else :
-        connect_to_jump()
+        connect_to_rhost()
         
         
