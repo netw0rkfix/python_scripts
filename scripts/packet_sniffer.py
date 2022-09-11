@@ -1,5 +1,3 @@
-#!/home/serveradmin/Desktop/security/DEV/pyhton/environments/bin/ python3
-
 ### Libs
 import scapy.all as scapy
 from scapy.layers import http

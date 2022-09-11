@@ -1,5 +1,3 @@
-#!/home/serveradmin/Desktop/security/DEV/pyhton/environments/bin/ python3
-
 # importing needed librairies
 import subprocess
 import optparse

@@ -1,4 +1,3 @@
-#!/home/serveradmin/Desktop/security/DEV/pyhton/environments/bin/ python3
 # pip install https://github.com/johnteslade/python-netfilterqueue/archive/refs/heads/update-cython-code.zip
 
 # import needed library

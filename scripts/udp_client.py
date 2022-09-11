@@ -1,5 +1,3 @@
-#!/home/serveradmin/Desktop/security/DEV/pyhton/environments/bin/ python3
-
 ### Set a netcat listener (  nc -ulp -80  ) to receive data
 
 import socket
